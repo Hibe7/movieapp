@@ -13,6 +13,7 @@ import "./ContentModal.css";
 import { Button } from "@material-ui/core";
 import YouTubeIcon from "@material-ui/icons/YouTube";
 import Carousel from "../Carousel/Carousel";
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -32,7 +33,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function TransitionsModal({ children, media_type, id }) {
+export const savedLike = [];
+
+
+export default function TransitionsModal({ children, media_type, id })  {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
@@ -45,6 +49,11 @@ export default function TransitionsModal({ children, media_type, id }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+
+ 
+
+  
 
   const fetchData = async () => {
     const { data } = await axios.get(
@@ -68,6 +77,18 @@ export default function TransitionsModal({ children, media_type, id }) {
     fetchVideo();
     // eslint-disable-next-line
   }, []);
+
+  const [like, setLike] = useState("")
+
+  const like1 = like;
+  
+  savedLike.push(like1)
+
+
+console.log(savedLike);
+
+
+
 
   return (
     <>
@@ -123,6 +144,10 @@ export default function TransitionsModal({ children, media_type, id }) {
                     ).substring(0, 4)}
                     )
                   </span>
+                  <span className="fav__icon" onClick={
+                    ()=> setLike(content.title || content.name)}>
+                    <FavoriteIcon /></span>
+                  
                   {content.tagline && (
                     <i className="tagline">{content.tagline}</i>
                   )}

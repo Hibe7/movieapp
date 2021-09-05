@@ -30,5 +30,42 @@
 .login__button:hover{
     color: black;
     background-color: #ffffff;
+    cursor: pointer;
 }
 
+
+.container{
+    margin:2vh 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10vh;
+    background-color: #423f3e;
+    border-radius: 20px;
+    
+}
+hr {
+    border-top: 1px solid #2b2b2b;
+    width: 60%
+  }
+  li{
+    padding: 10px;
+    color: #fff;
+    font-size: 1.5rem;
+    margin: auto;
+  }
+  button {
+    margin-top: 20px;
+    border: none;
+    padding: 15px;
+    border-radius: 20px;
+    background-color: #2b2b2b;
+    color: #fff;
+    font-weight: bold;
+  }
+  
+  button:hover{
+    background-color: #fff;
+    color:#2b2b2b ;
+  }
