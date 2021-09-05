@@ -37,3 +37,11 @@
     padding:0 2px;
     padding-bottom: 3px;
 }
+
+.fav__icon{
+    display: flex;
+    justify-content: space-around;
+}
+.fav__icon:hover{
+    color: rgb(255, 0, 0);
+  }
